@@ -6,9 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-
     public DBHelper(Context context, int version) {
-
         super(context, User.DBNAME, null, version);
     }
 
@@ -17,13 +15,13 @@ public class DBHelper extends SQLiteOpenHelper {
         StringBuffer createUserTable = new StringBuffer();
         createUserTable.append("CREATE TABLE IF NOT EXISTS ");
         createUserTable.append(User.USER_TABLE_NAME + "(");
-        createUserTable.append(User.USER_TABLE_ID + " integer primary key autoincrement ,");
+        createUserTable.append(User.USER_TABLE_INFO_COLUM_ID + " integer primary key autoincrement ,");
         createUserTable.append(User.USER_TABLE_INFO_COLUM_USERNAME + " varchar(12),");
         createUserTable.append(User.USER_TABLE_INFO_COLUM_PASSWORD + " varchar(20),");
         createUserTable.append(User.USER_TABLE_INFO_COLUM_EMAIL + " varchar(20),");
         createUserTable.append(User.USER_TABLE_INFO_COLUM_STATUS + " integer)");
 
-        System.out.println(createUserTable.toString());
+        //System.out.println(createUserTable.toString());
         db.execSQL(createUserTable.toString());
     }
 

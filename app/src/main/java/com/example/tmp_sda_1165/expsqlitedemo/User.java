@@ -4,12 +4,11 @@ public class User {
 
     public static final String DBNAME = "extrack.db";
     public static final String USER_TABLE_NAME = "user_record";
-    public static final String USER_TABLE_ID = "userid";
+    public static final String USER_TABLE_INFO_COLUM_ID = "userid";
     public static final String USER_TABLE_INFO_COLUM_USERNAME = "username";
     public static final String USER_TABLE_INFO_COLUM_PASSWORD = "password";
     public static final String USER_TABLE_INFO_COLUM_EMAIL = "email";
     public static final String USER_TABLE_INFO_COLUM_STATUS = "status";
-
 
     private int userId;
     private String username;
@@ -17,14 +16,7 @@ public class User {
     private String email;
     private boolean status;
 
-
-    public User(String username, String password, boolean status) {
-        this.username = username;
-        this.password = password;
-        this.status = status;
-    }
-
-    public User(String username, String password, String email,boolean status) {
+    public User(String username, String password, String email, boolean status) {
         this.username = username;
         this.password = password;
         this.email = email;
