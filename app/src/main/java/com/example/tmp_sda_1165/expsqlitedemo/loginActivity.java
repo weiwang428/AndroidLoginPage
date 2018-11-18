@@ -2,6 +2,7 @@ package com.example.tmp_sda_1165.expsqlitedemo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -51,7 +52,14 @@ public class loginActivity extends AppCompatActivity {
                     // Now Start the Activity.
                     _context.startActivity(i);
                 } else {
-                    Toast.makeText(_context, "Incorrect User name or password", Toast.LENGTH_LONG).show();
+
+                    //Toast.makeText(_context, "Incorrect User name or password", Toast.LENGTH_LONG).show();
+                    Toast toast = Toast.makeText(_context, "Incorrect User name or password", Toast.LENGTH_LONG);
+                    View view = toast.getView();
+                    //view.setBackgroundResource(R.drawable.custom_backgrround);
+                    TextView text = (TextView) view.findViewById(android.R.id.message);
+                    text.setTextColor(Color.parseColor("red"));
+                    toast.show();
                 }
             }
         });
